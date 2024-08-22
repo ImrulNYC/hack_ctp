@@ -1,30 +1,26 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
-
-# A simple in-memory list to store subscribers (this is just for demonstration)
-subscribers = []
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/subscribe', methods=['POST'])
-def subscribe():
-    email = request.form['email']
-    if email not in subscribers:
-        subscribers.append(email)
-        # Here you would add code to send a confirmation email
-        return f"Thank you for subscribing, {email}!"
-    return "You are already subscribed!"
+@app.route('/food')
+def food():
+    return render_template('food.html')
 
-@app.route('/unsubscribe/<email>')
-def unsubscribe(email):
-    if email in subscribers:
-        subscribers.remove(email)
-        # Here you would add code to send an unsubscribe confirmation email
-        return f"You have unsubscribed, {email}."
-    return "Email not found."
+@app.route('/education')
+def education():
+    return render_template('education.html')
+
+@app.route('/mental_health')
+def mental_health():
+    return render_template('mental_health.html')
+
+@app.route('/security')
+def security():
+    return render_template('security.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
