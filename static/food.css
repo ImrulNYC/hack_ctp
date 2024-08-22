@@ -26,6 +26,7 @@ nav ul {
     padding: 0;
     margin: 0;
     background-color: #333; /* Dark background for nav */
+    text-align: center;
 }
 
 nav ul li {
@@ -44,18 +45,32 @@ nav ul li a:hover {
     background-color: #575757; /* Slightly lighter on hover */
 }
 
+/* Main Styles */
+main {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 /* Section Styles */
 section {
     padding: 20px;
     margin: 15px auto;
     background-color: #fff;
     border-radius: 8px;
-    max-width: 800px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
     color: #4CAF50; /* Green color for section headers */
+}
+
+section p, section ul {
+    margin-bottom: 15px;
+}
+
+section ul {
+    padding-left: 20px;
 }
 
 /* Footer Styles */
