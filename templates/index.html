@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscribe Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
     <header>
         <h1>Welcome to My Website</h1>
@@ -16,6 +18,8 @@
                 <li><a href="/education">Education</a></li>
                 <li><a href="/mental_health">Mental Health</a></li>
                 <li><a href="/security">Security</a></li>
+                <li><a href="/post">Post</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -28,8 +32,68 @@
         </form>
     </section>
 
+    <section>
+        <h1>Add a New Blog Post</h1>
+        <form id="post-form" method="post">
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title" name="post-title" required><br>
+
+            <label for="post-image">Image URL:</label>
+            <input type="text" id="post-image" name="post-image" required><br>
+
+            <label for="post-content">Content:</label>
+            <textarea id="post-content" name="post-content" required></textarea><br>
+
+            <button type="submit">Add Post</button>
+        </form>
+
+        <h2>Recent Posts</h2>
+        <div id="post-list">
+            <!-- Posts will be added here dynamically -->
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('post-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('post-title').value;
+            const image = document.getElementById('post-image').value;
+            const content = document.getElementById('post-content').value;
+
+            // Create a new post element
+            const postElement = document.createElement('div');
+            postElement.className = 'post-item';
+            postElement.innerHTML = `
+                <h3 class="post-title">${title}</h3>
+                <img class="post-image" src="${image}" alt="Post Image">
+                <p class="post-content">${content}</p>
+            `;
+
+            // Add the new post to the list
+            document.getElementById('post-list').appendChild(postElement);
+
+            // Optionally, reset the form
+            document.getElementById('post-form').reset();
+
+            // Send data to Flask using fetch
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: title,
+                    image: image,
+                    content: content
+                })
+            });
+        });
+    </script>
+
     <footer>
         <p>&copy; 2024 My Website</p>
     </footer>
 </body>
+
 </html>
