@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Resources</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <header>
         <h1>Mental Health Resources</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/food">Food</a></li>
-                <li><a href="/education">Education</a></li>
-                <li><a href="/mental_health">Mental Health</a></li>
-                <li><a href="/security">Security</a></li>
+                <li><a href="/templates/index.html">Home</a></li>
+                <li><a href="./food.html">Food</a></li>
+                <li><a href="./education.html">Education</a></li>
+                <li><a href="./mental_health.html">Mental Health</a></li>
+                <li><a href="./security.html">Security</a></li>
             </ul>
         </nav>
     </header>
+
+    <section>
+        <h2>CUNY Resources</h2>
+        <p>These resources are available exclusively to CUNY students:</p>
+        <ul>
+            <li><a href="https://www.cuny.edu/current-students/student-affairs/student-services/counseling/#counseling">CUNY Counseling Services</a> - Access counseling services at CUNY campuses.</li>
+            <li><a href="https://account.v2.togetherall.com/register/student?utm_campaign=QR%20&utm_medium=InteractivePDF&utm_source=USEducation">Togetherall</a> - Free, safe, anonymous, and peer mental health community.</li>
+            <li><a href="https://monique-rhodes.mykajabi.com/offers/MQ6AUDnk/checkout">10 Minute Mind</a> - Free daily online guided mindfulness meditation.</li>
+        </ul>
+    </section>
 
     <section>
         <h2>Helpful Resources</h2>
