@@ -1,7 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Montserrat;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -26,6 +27,14 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+a {
+    color: blue;
+}
+
 section {
     padding: 20px;
     margin: 10px;
@@ -39,4 +48,31 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
+#supportGroups {
+    padding-bottom: 60px;
+}
+
+.image {
+    float: right;
+    width: 100%;
+    max-width: 400px; 
+    height: auto; 
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .image {
+        float: none;
+        margin: 20px 0; 
+    }
 }
