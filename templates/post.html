@@ -27,7 +27,7 @@
 
         <!-- Inputs for new post -->
         <h3>Add New Blog Post</h3>
-        <form id="new-post-form" method="GET">
+        <form id="new-post-form" action="/post" method="POST">
             <label for="post-title">Title:</label><br>
             <input type="text" id="post-title" name="post-title" required><br>
 
@@ -37,7 +37,7 @@
             <label for="post-content">Content:</label><br>
             <textarea id="post-content" name="post-content" rows="4" required></textarea><br>
 
-            <button type="button" onclick="addPost()">Add Post</button>
+            <button type="submit">Add Post</button>
         </form>
     </section>
 

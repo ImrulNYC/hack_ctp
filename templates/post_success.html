@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 20px;
+            display: inline-block;
+        }
+        .success-message a {
+            color: #155724;
+            text-decoration: none;
+        }
+        .success-message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-message">
+        <h1>Success!</h1>
+        <p>Your post has been added successfully.</p>
+        <a href="{{ url_for('index') }}">Return to homepage</a>
+    </div>
+</body>
+</html>
