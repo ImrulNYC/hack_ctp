@@ -1,102 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscribe Page</title>
-    <link rel="stylesheet" href="../static/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Home - Education Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/index.css">
 </head>
-
 <body>
     <header>
-        <h1>Welcome to GoGoCoders Website</h1>
+        <h1>Education Resources</h1>
         <nav>
             <ul>
-               
+                <li><a href="/templates/index.html">Home</a></li>
                 <li><a href="/templates/food.html">Food</a></li>
                 <li><a href="/templates/education.html">Education</a></li>
                 <li><a href="/templates/mental_health.html">Mental Health</a></li>
                 <li><a href="/templates/security.html">Security</a></li>
-                <li><a href="/post">Post</a></li>
+              
             </ul>
         </nav>
     </header>
 
-    <section>
-        <h2>Subscribe to our Newsletter</h2>
-        <form action="/subscribe" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <button type="submit">Subscribe</button>
-        </form>
+    <section id="welcome">
+        <h2>Welcome to Education Resources</h2>
+        <p>Your one-stop destination for all educational and well-being resources at CUNY. Explore the various categories to find helpful information, links to external resources, and support for your academic and personal journey.</p>
+        <a href="/education" class="btn">Explore Educational Resources</a>
     </section>
 
-    <section>
-        <h1>Add a New Blog Post</h1>
-        <form id="post-form" method="post">
-            <label for="post-title">Title:</label>
-            <input type="text" id="post-title" name="post-title" required><br>
-
-            <label for="post-image">Image URL:</label>
-            <input type="text" id="post-image" name="post-image" required><br>
-
-            <label for="post-content">Content:</label>
-            <textarea id="post-content" name="post-content" required></textarea><br>
-
-            <button type="submit">Add Post</button>
-        </form>
-
-        <h2>Recent Posts</h2>
-        <div id="post-list">
-            <!-- Posts will be added here dynamically -->
+    <section id="featured">
+        <h2>Featured Sections</h2>
+        <div class="featured-container">
+            <div class="featured-item">
+                <h3><a href="/education">Education</a></h3>
+                <p>Access top online courses and educational materials to enhance your learning experience.</p>
+            </div>
+            <div class="featured-item">
+                <h3><a href="/food">Food</a></h3>
+                <p>Discover food resources and meal plans to maintain a healthy lifestyle while studying.</p>
+            </div>
+            <div class="featured-item">
+                <h3><a href="/mental_health">Mental Health</a></h3>
+                <p>Find support and resources for maintaining mental well-being during your studies.</p>
+            </div>
         </div>
     </section>
 
-    <script>
-        document.getElementById('post-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const title = document.getElementById('post-title').value;
-            const image = document.getElementById('post-image').value;
-            const content = document.getElementById('post-content').value;
-
-            // Create a new post element
-            const postElement = document.createElement('div');
-            postElement.className = 'post-item';
-            postElement.innerHTML = `
-                <h3 class="post-title">${title}</h3>
-                <img class="post-image" src="${image}" alt="Post Image">
-                <p class="post-content">${content}</p>
-            `;
-
-            // Add the new post to the list
-            document.getElementById('post-list').appendChild(postElement);
-
-            // Optionally, reset the form
-            document.getElementById('post-form').reset();
-
-            // Send data to Flask using fetch
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    title: title,
-                    image: image,
-                    content: content
-                })
-            });
-        });
-    </script>
-
     <footer>
-        <p>&copy; CTP Hack GoGoCoders</p>
+        <p>&copy; 2024 CTP Hack GoGoCoders | All rights reserved</p>
     </footer>
 </body>
-
 </html>

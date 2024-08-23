@@ -1,0 +1,139 @@
+/* CUNY Blue Theme CSS */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+/* Header Styles */
+header {
+    background-color: #0055A2; /* CUNY Blue */
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Welcome Section Styles */
+#welcome {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#welcome h2 {
+    color: #0055A2;
+    font-size: 2.2em;
+}
+
+#welcome p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#welcome .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0055A2;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#welcome .btn:hover {
+    background-color: #003f7d;
+}
+
+/* Featured Sections Styles */
+#featured {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#featured h2 {
+    color: #0055A2;
+    font-size: 2em;
+    margin-top: 0;
+    text-align: center;
+}
+
+.featured-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.featured-item {
+    width: 30%;
+    background-color: #e7eef5;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item h3 a {
+    color: #0055A2;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.featured-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.featured-item p {
+    font-size: 1.1em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0055A2; /* CUNY Blue */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
