@@ -3,5 +3,5 @@ services:
     name: my-static-site
     env: static
     staticSite:
-      directory: public  # Replace with the path to your static files
-      buildCommand: ""   # Leave empty if no build command is needed
+      directory: templates  
+      buildCommand: ""   
